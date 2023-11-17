@@ -7,9 +7,9 @@ app.http('MNFCalc', {
         context.log(`Http function processed request for url "${request.url}"`);
 
         //Abfrage der Parameter
-        const paramA = request.query.get('paramA') || (request.body && request.body.get('paramA'));
-        const paramB = request.query.get('paramB') || (request.body && request.body.get('paramB'));
-        const paramC = request.query.get('paramC') || (request.body && request.body.get('paramC'));
+        const paramA = request.query.get('paramA') || (request.body && request.body.paramA);
+        const paramB = request.query.get('paramB') || (request.body && request.body.paramB);
+        const paramC = request.query.get('paramC') || (request.body && request.body.paramC);
 
         context.log(`f(x) = ` + paramA + `x^2 + ` + paramB + `x + ` + paramC);
 
