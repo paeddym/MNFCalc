@@ -31,8 +31,8 @@ app.http('MNFCalc', {
         
         //Falls es nur eine NS gibt
         if(x1 == x2)
-            return { body: "Die Nullstelle ist:\tX1/2: " + x1};
+            return { body: "Die Nullstelle ist: X1/2: " + x1};
 
-        return { body: "Die Nullstellen sind:\tX1 = " + x1 + ",\tX2 =  " + x2};
+        return { body: "Die Nullstellen sind: X1 = " + x1 + ", X2 =  " + x2};
     }
 });
