@@ -13,7 +13,9 @@ app.http('MNFCalc', {
 
         context.log(`f(x) = ` + paramA + `x^2 + ` + paramB + `x + ` + paramC);
 
-        //Fehlerabfrage für fehlende Parameter fehlt
+        //Alle Parameter müssen gegeben sein, um Error zu vermeiden
+        if(paramA == undefined || paramB == undefined || paramC == undefined)
+            return { body: "Bitte geben Sie allen Parametern einen gültigen Wert"};
 
         //Buchstaben herausfiltern
         if(isNaN(paramA) || isNaN(paramB) || isNaN(paramC)) 
