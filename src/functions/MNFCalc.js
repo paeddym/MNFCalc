@@ -7,11 +7,13 @@ app.http('MNFCalc', {
         context.log(`Http function processed request for url "${request.url}"`);
 
         //Abfrage der Parameter
-        const paramA = request.query.get('paramA') || (request.body && request.body.paramA) || await request.text() || 'world';
-        const paramB = request.query.get('paramB') || (request.body && request.body.paramB) || await request.text() || 'world';
-        const paramC = request.query.get('paramC') || (request.body && request.body.paramC) || await request.text() || 'world';
+        const paramA = request.query.get('paramA') || (request.body && request.body.get('paramA'));
+        const paramB = request.query.get('paramB') || (request.body && request.body.get('paramB'));
+        const paramC = request.query.get('paramC') || (request.body && request.body.get('paramC'));
 
         context.log(`f(x) = ` + paramA + `x^2 + ` + paramB + `x + ` + paramC);
+
+        //Fehlerabfrage für fehlende Parameter fehlt
 
         //Buchstaben herausfiltern
         if(isNaN(paramA) || isNaN(paramB) || isNaN(paramC)) 
